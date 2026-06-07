@@ -18,9 +18,9 @@ class chatbook:
         elif  user_input=="2":
             self.signin()
         elif  user_input=="3":
-            pass
+            self.my_post()
         elif  user_input=="4":
-            pass
+            self.sent_msg()
         else:
             exit()
     
@@ -47,7 +47,30 @@ class chatbook:
             else:
                 print("Please Enter Valid Credentials!!")
         print("\n")
-        self.menu()     
+        self.menu()   
+
+    #user can post method
+    def my_post(self):
+        if self.loggedIn==True:
+            txt=input("What's on your mind??")
+            print(txt + "\nHas been published.")
+        else:
+            print("Please Press 1 for signup")
+            print("Please Press 2 for signin") 
+        self.menu() 
+
+    #msg to friend
+
+    def sent_msg(self):
+        if self.loggedIn==True:
+            txt=input("Enter your Message: ")
+            friend=input("Enter your friend's Name: ")
+            print(f"Message sent successfully to {friend}")
+        else:
+            print("Please Press 1 for signup")
+            print("Please Press 2 for signin") 
+        self.menu() 
+
 
         
     
